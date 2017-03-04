@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
+    <Files>
+      <File FileName="Quiz Status" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Quiz" expanded="True" selected="True">
+            <Node name="Quiz" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Quiz PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.FD74F884-07B1-4743-8C0B-1F203D367157" />
+  <MultiItemStartupConfigurations />
+</Properties>

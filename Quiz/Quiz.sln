@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz", "Quiz\Quiz.csproj", "{F619770E-6008-461C-8984-E40901172745}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F619770E-6008-461C-8984-E40901172745}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F619770E-6008-461C-8984-E40901172745}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F619770E-6008-461C-8984-E40901172745}.Release|iPhone.ActiveCfg = Release|iPhone
+		{F619770E-6008-461C-8984-E40901172745}.Release|iPhone.Build.0 = Release|iPhone
+		{F619770E-6008-461C-8984-E40901172745}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F619770E-6008-461C-8984-E40901172745}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F619770E-6008-461C-8984-E40901172745}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{F619770E-6008-461C-8984-E40901172745}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
