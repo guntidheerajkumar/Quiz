@@ -13,15 +13,20 @@ namespace Quiz
 {
 	public partial class ViewController : UIViewController
 	{
+		
 		protected ViewController(IntPtr handle) : base(handle)
 		{
-			// Note: this .ctor should not contain any initialization logic.
+			
 		}
 
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
+
+			var db = Constants.GetConnectionObject();
+			var d = db.Table<Student>().Where(a => a.StudentId == 1).FirstOrDefault();
+			StudentImage.Image = UIImage.FromBundle(d.StudentImage);
+			StudentName.Text = d.StudentName;
 		}
 
 		public override void DidReceiveMemoryWarning()
