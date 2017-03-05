@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using CoreGraphics;
 using Foundation;
-using ObjCRuntime;
 using UIKit;
 
 namespace Quiz

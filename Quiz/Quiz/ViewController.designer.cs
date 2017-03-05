@@ -16,6 +16,9 @@ namespace Quiz
 		UIKit.UIButton BtnNextQuestion { get; set; }
 
 		[Outlet]
+		UIKit.UILabel LblTimer { get; set; }
+
+		[Outlet]
 		UIKit.UITableView QuestionTableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -23,6 +26,11 @@ namespace Quiz
 			if (BtnNextQuestion != null) {
 				BtnNextQuestion.Dispose ();
 				BtnNextQuestion = null;
+			}
+
+			if (LblTimer != null) {
+				LblTimer.Dispose ();
+				LblTimer = null;
 			}
 
 			if (QuestionTableView != null) {

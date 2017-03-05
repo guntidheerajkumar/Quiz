@@ -8,8 +8,10 @@
 using System;
 using Foundation;
 using CoreGraphics;
+using System.Timers;
 using UIKit;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Quiz
 {
@@ -17,6 +19,7 @@ namespace Quiz
 	{
 		Questionnaire questionnaire;
 		List<QuestionnaireOptions> questionnaireOptions;
+		private int duration = 0;
 
 		protected ViewController(IntPtr handle) : base(handle)
 		{
@@ -26,13 +29,16 @@ namespace Quiz
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
+			LblTimer.Text = string.Empty;
+			LblTimer.Layer.MasksToBounds = true;
+			LblTimer.Layer.CornerRadius = LblTimer.Frame.Width / 2;
 			var db = Constants.GetConnectionObject();
 			int QuestionnaireId = 1;
 			questionnaire = db.Table<Questionnaire>().Where(a => a.QuestionnaireId == QuestionnaireId).FirstOrDefault();
 			questionnaireOptions = db.Query<QuestionnaireOptions>($"select * from QuestionnaireOptions where QuestionnaireId = {questionnaire.QuestionnaireId}");
-
+			StartTimer();
 			BtnNextQuestion.TouchUpInside += (sender, e) => {
+				StartTimer();
 				QuestionnaireId += 1;
 				questionnaire = db.Table<Questionnaire>().Where(a => a.QuestionnaireId == QuestionnaireId).FirstOrDefault();
 				questionnaireOptions = db.Query<QuestionnaireOptions>($"select * from QuestionnaireOptions where QuestionnaireId = {questionnaire.QuestionnaireId}");
@@ -44,7 +50,35 @@ namespace Quiz
 
 			QuestionTableView.TableFooterView = new UIView();
 		}
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+		}
+
+		private void UpdateDateTime()
+		{
+			if (duration != 60) {
+				LblTimer.Text = duration.ToString("00");
+				BtnNextQuestion.UserInteractionEnabled = false;
+				QuestionTableView.UserInteractionEnabled = true;
+				duration++;
+			} else {
+				duration = 0;
+				BtnNextQuestion.UserInteractionEnabled = true;
+				QuestionTableView.UserInteractionEnabled = false;
+			}
+		}
+
+		private void StartTimer()
+		{
+			var timer = new Timer(1000);
+			timer.Elapsed += (s, a) => InvokeOnMainThread(UpdateDateTime);
+			timer.Start();
+		}
 	}
+
+
 
 	public class QuestionTableSource : UITableViewSource
 	{
