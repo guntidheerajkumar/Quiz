@@ -138,6 +138,10 @@
     <Compile Include="Models\QuestionnaireOptions.cs" />
     <Compile Include="Logic\InitialSetupData.cs" />
     <Compile Include="Models\Constants.cs" />
+    <Compile Include="StudentCollectionViewController.cs" />
+    <Compile Include="StudentCollectionViewController.designer.cs">
+      <DependentUpon>StudentCollectionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />

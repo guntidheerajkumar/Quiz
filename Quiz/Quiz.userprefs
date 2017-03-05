@@ -1,19 +1,15 @@
 ﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz/StudentCollectionViewController.cs">
     <Files>
-      <File FileName="Quiz/AppDelegate.cs" Line="28" Column="31" />
-      <File FileName="Quiz/Logic/InitialSetupData.cs" Line="27" Column="4" />
-      <File FileName="Quiz/ViewController.cs" Line="30" Column="4" />
-      <File FileName="Quiz/Models/Constants.cs" Line="32" Column="1" />
-      <File FileName="Quiz Status" />
+      <File FileName="Quiz/StudentCollectionViewController.cs" Line="19" Column="78" />
+      <File FileName="Quiz/ViewController.cs" Line="27" Column="78" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Quiz" expanded="True" selected="True">
+          <Node name="Quiz" expanded="True">
             <Node name="Quiz" expanded="True">
-              <Node name="Logic" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="StudentCollectionViewController.cs" selected="True" />
             </Node>
           </Node>
         </State>
