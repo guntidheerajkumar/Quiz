@@ -13,21 +13,21 @@ namespace Quiz
 	partial class ViewController
 	{
 		[Outlet]
-		UIKit.UIImageView StudentImage { get; set; }
+		UIKit.UIButton BtnNextQuestion { get; set; }
 
 		[Outlet]
-		UIKit.UILabel StudentName { get; set; }
+		UIKit.UITableView QuestionTableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (StudentImage != null) {
-				StudentImage.Dispose ();
-				StudentImage = null;
+			if (BtnNextQuestion != null) {
+				BtnNextQuestion.Dispose ();
+				BtnNextQuestion = null;
 			}
 
-			if (StudentName != null) {
-				StudentName.Dispose ();
-				StudentName = null;
+			if (QuestionTableView != null) {
+				QuestionTableView.Dispose ();
+				QuestionTableView = null;
 			}
 		}
 	}
