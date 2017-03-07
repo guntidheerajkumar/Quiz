@@ -57,9 +57,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="General\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Repositories\IQuizRepository.cs" />
+    <Compile Include="Repositories\QuizRepository.cs" />
+    <Compile Include="Services\QuizService.cs" />
+    <Compile Include="General\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

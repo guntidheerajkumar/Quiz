@@ -12,5 +12,11 @@ namespace Quiz
 		public StudentJoinViewController (IntPtr handle) : base (handle)
 		{
 		}
+		
+		public override void ViewDidLoad()
+		{
+			base.ViewDidLoad();
+			this.View.BackgroundColor = UIColor.Yellow;
+		}
 	}
 }

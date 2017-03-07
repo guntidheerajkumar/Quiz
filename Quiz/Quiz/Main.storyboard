@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.6875" y="396.6796875"/>
+            <point key="canvasLocation" x="808" y="-206"/>
         </scene>
         <!--Student Collection View Controller-->
         <scene sceneID="xzQ-YD-Tog">
@@ -96,12 +96,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUT-2X-qaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581.25" y="395.5078125"/>
+            <point key="canvasLocation" x="1550" y="-206"/>
         </scene>
         <!--Student Join View Controller-->
         <scene sceneID="LKA-Ao-MP9">
             <objects>
-                <viewController storyboardIdentifier="StudentJoinViewController" id="4R7-1B-uBA" customClass="StudentJoinViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentJoinViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4R7-1B-uBA" customClass="StudentJoinViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewL-Hy-Ynx"/>
                         <viewControllerLayoutGuide type="bottom" id="j5b-QF-oB2"/>
@@ -114,7 +114,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whJ-FI-I8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="397"/>
+            <point key="canvasLocation" x="2242" y="-206"/>
+        </scene>
+        <!--Intro Quiz View Controller-->
+        <scene sceneID="U4r-Re-ESE">
+            <objects>
+                <viewController storyboardIdentifier="IntroQuizViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fjw-FE-ZDl" customClass="IntroQuizViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7YF-dD-UXq"/>
+                        <viewControllerLayoutGuide type="bottom" id="zMf-Pz-Ljx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VrF-f8-pAW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-iI-mZW">
+                                <rect key="frame" x="20" y="94" width="728" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RNh-cZ-zGN"/>
+                    <connections>
+                        <outlet property="QuizTableView" destination="8sq-iI-mZW" id="Kq4-kC-Sv9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAm-RE-XdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565.625" y="519.7265625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LWd-9o-Zpf">
@@ -127,12 +156,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AZa-SL-9rr"/>
+                        <segue destination="Fjw-FE-ZDl" kind="relationship" relationship="rootViewController" id="O0n-KT-ERb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhD-rU-bbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="403"/>
+            <point key="canvasLocation" x="31" y="-206"/>
         </scene>
     </scenes>
 </document>

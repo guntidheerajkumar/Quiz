@@ -149,6 +149,10 @@
     <Compile Include="StudentJoinViewController.designer.cs">
       <DependentUpon>StudentJoinViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="IntroQuizViewController.cs" />
+    <Compile Include="IntroQuizViewController.designer.cs">
+      <DependentUpon>IntroQuizViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
