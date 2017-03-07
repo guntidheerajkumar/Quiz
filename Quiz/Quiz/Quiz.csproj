@@ -106,6 +106,9 @@
     <Reference Include="SQLite-net">
       <HintPath>..\packages\sqlite-net-pcl.1.3.1\lib\netstandard1.1\SQLite-net.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\Xamarin.iOS10\RestSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -142,9 +145,19 @@
     <Compile Include="StudentCollectionViewController.designer.cs">
       <DependentUpon>StudentCollectionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentJoinViewController.cs" />
+    <Compile Include="StudentJoinViewController.designer.cs">
+      <DependentUpon>StudentJoinViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Quiz.PCL\Quiz.PCL.csproj">
+      <Project>{338521A7-775F-4550-A049-918DE2BA79D5}</Project>
+      <Name>Quiz.PCL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -98,6 +98,24 @@
             </objects>
             <point key="canvasLocation" x="1581.25" y="395.5078125"/>
         </scene>
+        <!--Student Join View Controller-->
+        <scene sceneID="LKA-Ao-MP9">
+            <objects>
+                <viewController storyboardIdentifier="StudentJoinViewController" id="4R7-1B-uBA" customClass="StudentJoinViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewL-Hy-Ynx"/>
+                        <viewControllerLayoutGuide type="bottom" id="j5b-QF-oB2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="liR-Kq-ccW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="whJ-FI-I8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2248" y="397"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="LWd-9o-Zpf">
             <objects>
