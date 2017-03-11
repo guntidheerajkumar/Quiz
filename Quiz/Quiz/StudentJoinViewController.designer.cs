@@ -12,9 +12,47 @@ namespace Quiz
 	[Register ("StudentJoinViewController")]
 	partial class StudentJoinViewController
 	{
+		[Outlet]
+		UIKit.UIButton JoinQuiz { get; set; }
+
+		[Outlet]
+		UIKit.UIImageView StudenImage { get; set; }
+
+		[Outlet]
+		UIKit.UITextField StudentAgeField { get; set; }
+
+		[Outlet]
+		UIKit.UITextField StudentNameField { get; set; }
+
+		[Outlet]
+		UIKit.UITextField StudentSchoolField { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (StudentNameField != null) {
+				StudentNameField.Dispose ();
+				StudentNameField = null;
+			}
+
+			if (StudentSchoolField != null) {
+				StudentSchoolField.Dispose ();
+				StudentSchoolField = null;
+			}
+
+			if (StudentAgeField != null) {
+				StudentAgeField.Dispose ();
+				StudentAgeField = null;
+			}
+
+			if (StudenImage != null) {
+				StudenImage.Dispose ();
+				StudenImage = null;
+			}
+
+			if (JoinQuiz != null) {
+				JoinQuiz.Dispose ();
+				JoinQuiz = null;
+			}
 		}
 	}
 }

@@ -8,7 +8,7 @@
 using System;
 namespace Quiz.PCL
 {
-	public class Student
+	public class SmartStudent
 	{
 		public int StudentId { get; set; }
 		public string StudentName { get; set; }

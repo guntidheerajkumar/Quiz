@@ -70,6 +70,9 @@
     <Compile Include="Repositories\QuizRepository.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="General\Constants.cs" />
+    <Compile Include="Repositories\IStudentRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Services\StudentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,19 +4,92 @@ using System;
 
 using Foundation;
 using UIKit;
+using Quiz.PCL;
 
 namespace Quiz
 {
 	public partial class StudentJoinViewController : UIViewController
 	{
-		public StudentJoinViewController (IntPtr handle) : base (handle)
+		UIImagePickerController imagePicker;
+		public StudentJoinViewController(IntPtr handle) : base(handle)
 		{
 		}
-		
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			this.View.BackgroundColor = UIColor.Yellow;
+
+
+
+			var tapGuestureRecognizer = new UITapGestureRecognizer(OnSelectImage);
+			StudenImage.UserInteractionEnabled = true;
+			StudenImage.AddGestureRecognizer(tapGuestureRecognizer);
+
+			JoinQuiz.TouchUpInside += (sender, e) => {
+				SmartStudent student = new SmartStudent();
+				student.StudentName = StudentNameField.Text;
+				student.SchoolName = StudentSchoolField.Text;
+				student.StudentImage = StudenImage.Image.ToNSData();
+				student.Age = Convert.ToInt32(StudentAgeField.Text);
+				student.LogInDateTime = DateTime.Now;
+
+				var joinRepository = new StudentRepository();
+				joinRepository.AddStudent(student);
+			};
+		}
+
+		private void OnSelectImage()
+		{
+			imagePicker = new UIImagePickerController();
+			imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+			imagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+			imagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
+			imagePicker.Canceled += Handle_Canceled;
+			NavigationController.PresentModalViewController(imagePicker, true);
+		}
+
+		protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
+		{
+			// determine what was selected, video or image
+			bool isImage = false;
+			switch (e.Info[UIImagePickerController.MediaType].ToString()) {
+				case "public.image":
+					Console.WriteLine("Image selected");
+					isImage = true;
+					break;
+				case "public.video":
+					Console.WriteLine("Video selected");
+					break;
+			}
+
+			// get common info (shared between images and video)
+			NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceUrl")] as NSUrl;
+			if (referenceURL != null)
+				Console.WriteLine("Url:" + referenceURL.ToString());
+
+			// if it was an image, get the other image info
+			if (isImage) {
+				// get the original image
+				UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+				if (originalImage != null) {
+					// do something with the image
+					Console.WriteLine("got the original image");
+					StudenImage.Image = originalImage; // display
+				}
+			} else { // if it's a video
+					 // get video url
+				NSUrl mediaURL = e.Info[UIImagePickerController.MediaURL] as NSUrl;
+				if (mediaURL != null) {
+					Console.WriteLine(mediaURL.ToString());
+				}
+			}
+			// dismiss the picker
+			imagePicker.DismissViewController(true, null);
+		}
+
+		void Handle_Canceled(object sender, EventArgs e)
+		{
+			imagePicker.DismissViewController(true, null);
 		}
 	}
 }

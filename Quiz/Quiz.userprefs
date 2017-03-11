@@ -1,8 +1,12 @@
 ﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
     <Files>
-      <File FileName="Quiz/IntroQuizViewController.cs" Line="82" Column="1" />
-      <File FileName="Quiz/StudentJoinViewController.cs" Line="19" Column="47" />
+      <File FileName="Quiz.PCL/Services/StudentService.cs" Line="19" Column="3" />
+      <File FileName="Quiz/StudentJoinViewController.cs" Line="26" Column="60" />
+      <File FileName="Quiz.PCL/Repositories/StudentRepository.cs" Line="11" Column="34" />
+      <File FileName="Quiz.PCL/Repositories/QuizRepository.cs" Line="27" Column="1" />
+      <File FileName="Quiz.PCL/Repositories/IStudentRepository.cs" Line="11" Column="1" />
+      <File FileName="Quiz.PCL/Models/Student.cs" Line="21" Column="1" />
       <File FileName="Quiz Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
