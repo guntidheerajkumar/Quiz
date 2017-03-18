@@ -17,4 +17,9 @@ namespace Quiz.PCL
 		public DateTime LogInDateTime { get; set; }
 		public byte[] StudentImage { get; set; }
 	}
+
+	public class SmartStudentRequest
+	{
+		public string Input { get; set; }
+	}
 }

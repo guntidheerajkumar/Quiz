@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Quiz.PCL
@@ -9,6 +10,13 @@ namespace Quiz.PCL
 		{
 			var serviceData = new StudentService();
 			await serviceData.AddStudent(student);
+		}
+
+		public async Task<List<SmartStudent>> GetStudents()
+		{
+			var serviceData = new StudentService();
+			var studentdata = await serviceData.GetStudents();
+			return studentdata;
 		}
 	}
 }

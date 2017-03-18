@@ -71,10 +71,10 @@ namespace Quiz
 
 			return cell;
 		}
-		
+
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			var studentJoinViewController = UIStoryboard.FromName("Main",null).InstantiateViewController("StudentJoinViewController");
+			var studentJoinViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
 			NavigationController.PushViewController(studentJoinViewController, true);
 		}
 	}

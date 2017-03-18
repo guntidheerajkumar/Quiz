@@ -2,8 +2,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CoreGraphics;
 using Foundation;
+using Quiz.PCL;
 using UIKit;
 
 namespace Quiz
@@ -11,25 +13,29 @@ namespace Quiz
 	public partial class StudentCollectionViewController : UICollectionViewController
 	{
 		static NSString studentCellId = new NSString("CollectionCell");
-		List<Student> students;
+		List<SmartStudent> students;
 
 		public StudentCollectionViewController(IntPtr handle) : base(handle)
 		{
-			var db = Constants.GetConnectionObject();
-			var studentData = db.Query<Student>("select * from Student");
-			students = new List<Student>();
-			foreach (var item in studentData) {
-				students.Add(new Student() { StudentName = item.StudentName, StudentImage = item.StudentImage });
-			}
 		}
 
-		public override void ViewDidLoad()
+		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			students = new List<SmartStudent>();
 			this.Title = "Students";
 			this.View.BackgroundColor = UIColor.White;
+			var joinRepository = new StudentRepository();
+			students = await joinRepository.GetStudents();
+			CollectionView.ReloadData();
+		}
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
 			CollectionView.Frame = new CGRect(60, 70, this.View.Frame.Width - 120, CollectionView.Frame.Height);
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
+
 		}
 
 		public override nint NumberOfSections(UICollectionView collectionView)
@@ -46,7 +52,7 @@ namespace Quiz
 		{
 			var studentCell = (CollectionCell)collectionView.DequeueReusableCell(studentCellId, indexPath);
 			var student = students[indexPath.Row];
-			studentCell.Image = UIImage.FromBundle(student.StudentImage);
+			studentCell.Image = student.StudentImage.ToImage();
 			studentCell.TitleLabel = student.StudentName;
 			return studentCell;
 		}
@@ -73,7 +79,7 @@ namespace Quiz
 	{
 		UIImageView imageView;
 		UILabel titleLabel;
-		
+
 		[Export("initWithFrame:")]
 		public CollectionCell(CGRect frame) : base(frame)
 		{
@@ -89,7 +95,7 @@ namespace Quiz
 			titleLabel.Frame = new CGRect(0, imageView.Frame.Height + 5, 200, 30);
 			titleLabel.TextAlignment = UITextAlignment.Center;
 			titleLabel.TextColor = UIColor.Black;
-			
+
 			ContentView.AddSubview(titleLabel);
 			ContentView.AddSubview(imageView);
 		}
@@ -99,11 +105,11 @@ namespace Quiz
 				imageView.Image = value;
 			}
 		}
-		
-		public string TitleLabel { 
+
+		public string TitleLabel {
 			set {
 				titleLabel.Text = value;
 			}
-		} 
-	} 
+		}
+	}
 }
