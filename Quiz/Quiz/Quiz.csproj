@@ -115,8 +115,17 @@
     <Reference Include="EZCompress1.Plugin">
       <HintPath>..\packages\JosephAntolick.EZCompress1.Plugin.1.0.0.0\lib\Xamarin.iOS10\EZCompress1.Plugin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>..\Components\signalr-2.1.2.2\lib\ios-unified\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Components\signalr-2.1.2.2\lib\ios-unified\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\Components\signalr-2.1.2.2\lib\ios-unified\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\Components\signalr-2.1.2.2\lib\ios-unified\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -167,9 +176,16 @@
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="Services\StudentService.cs" />
+    <Compile Include="QuizListeners\QuizListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="signalr">
+      <Version>2.1.2.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

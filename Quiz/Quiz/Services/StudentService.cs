@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace Quiz.PCL
+namespace Quiz.Services
 {
 	public class StudentService
 	{

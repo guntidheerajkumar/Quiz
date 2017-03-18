@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Quiz.Services;
 
-namespace Quiz.PCL
+namespace Quiz.Repository
 {
 	public class StudentRepository : IStudentRepository
 	{

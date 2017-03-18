@@ -168,6 +168,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WtX-6V-Jdc">
+                                <rect key="frame" x="98" y="753" width="606" height="231"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -177,6 +184,7 @@
                         <outlet property="StudentAgeField" destination="7o5-ee-wkS" id="eJQ-i8-09G"/>
                         <outlet property="StudentNameField" destination="7I6-o0-i6X" id="jcG-fV-FqV"/>
                         <outlet property="StudentSchoolField" destination="o7M-lZ-1Cw" id="O5K-vJ-Zhd"/>
+                        <outlet property="TxtQuizQuestion" destination="WtX-6V-Jdc" id="BVD-3s-Hyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whJ-FI-I8q" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,18 +1,9 @@
-﻿//
-// QuizRepository.cs
-//
-// Author: Dheeraj Kumar Gunti <guntidheerajkumar@gmail.com>
-//
-// Copyright (c) 2017 (c) Dheeraj Kumar Gunti
-//
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Quiz.PCL.Models;
-using Quiz.PCL.Interfaces;
-using Quiz.PCL.Services;
+using Quiz.Models;
+using Quiz.Services;
 
-namespace Quiz.PCL.Repository
+namespace Quiz.Repository
 {
 	public class QuizRepository : IQuizRepository
 	{

@@ -7,7 +7,7 @@
 //
 using System;
 
-namespace Quiz.PCL.Models
+namespace Quiz.Models
 {
 	public class SmartQuiz
 	{

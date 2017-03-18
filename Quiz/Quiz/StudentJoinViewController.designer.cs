@@ -26,9 +26,27 @@ namespace Quiz
 
 		[Outlet]
 		UIKit.UITextField StudentSchoolField { get; set; }
+
+		[Outlet]
+		UIKit.UITextView TxtQuizQuestion { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (JoinQuiz != null) {
+				JoinQuiz.Dispose ();
+				JoinQuiz = null;
+			}
+
+			if (StudenImage != null) {
+				StudenImage.Dispose ();
+				StudenImage = null;
+			}
+
+			if (StudentAgeField != null) {
+				StudentAgeField.Dispose ();
+				StudentAgeField = null;
+			}
+
 			if (StudentNameField != null) {
 				StudentNameField.Dispose ();
 				StudentNameField = null;
@@ -39,19 +57,9 @@ namespace Quiz
 				StudentSchoolField = null;
 			}
 
-			if (StudentAgeField != null) {
-				StudentAgeField.Dispose ();
-				StudentAgeField = null;
-			}
-
-			if (StudenImage != null) {
-				StudenImage.Dispose ();
-				StudenImage = null;
-			}
-
-			if (JoinQuiz != null) {
-				JoinQuiz.Dispose ();
-				JoinQuiz = null;
+			if (TxtQuizQuestion != null) {
+				TxtQuizQuestion.Dispose ();
+				TxtQuizQuestion = null;
 			}
 		}
 	}

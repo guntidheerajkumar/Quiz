@@ -9,7 +9,7 @@ using System;
 using Foundation;
 using UIKit;
 
-namespace Quiz.PCL
+namespace Quiz
 {
 	public class Constants
 	{

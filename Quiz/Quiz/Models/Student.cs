@@ -6,7 +6,8 @@
 // Copyright (c) 2017 (c) Dheeraj Kumar Gunti
 //
 using System;
-namespace Quiz.PCL
+
+namespace Quiz
 {
 	public class SmartStudent
 	{
