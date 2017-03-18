@@ -115,6 +115,9 @@
     <Reference Include="EZCompress1.Plugin">
       <HintPath>..\packages\JosephAntolick.EZCompress1.Plugin.1.0.0.0\lib\Xamarin.iOS10\EZCompress1.Plugin.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -122,8 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="General\" />
     <Folder Include="Models\" />
-    <Folder Include="Logic\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -141,12 +146,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentGroup.cs" />
-    <Compile Include="Models\Questionnaire.cs" />
-    <Compile Include="Models\QuestionnaireOptions.cs" />
-    <Compile Include="Logic\InitialSetupData.cs" />
-    <Compile Include="Models\Constants.cs" />
     <Compile Include="StudentCollectionViewController.cs" />
     <Compile Include="StudentCollectionViewController.designer.cs">
       <DependentUpon>StudentCollectionViewController.cs</DependentUpon>
@@ -159,15 +158,18 @@
     <Compile Include="IntroQuizViewController.designer.cs">
       <DependentUpon>IntroQuizViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="General\Constants.cs" />
+    <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Repositories\IQuizRepository.cs" />
+    <Compile Include="Repositories\IStudentRepository.cs" />
+    <Compile Include="Repositories\QuizRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Services\QuizService.cs" />
+    <Compile Include="Services\StudentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Quiz.PCL\Quiz.PCL.csproj">
-      <Project>{338521A7-775F-4550-A049-918DE2BA79D5}</Project>
-      <Name>Quiz.PCL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
