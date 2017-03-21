@@ -26,9 +26,6 @@ namespace Quiz
 
 		[Outlet]
 		UIKit.UITextField StudentSchoolField { get; set; }
-
-		[Outlet]
-		UIKit.UITextView TxtQuizQuestion { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -55,11 +52,6 @@ namespace Quiz
 			if (StudentSchoolField != null) {
 				StudentSchoolField.Dispose ();
 				StudentSchoolField = null;
-			}
-
-			if (TxtQuizQuestion != null) {
-				TxtQuizQuestion.Dispose ();
-				TxtQuizQuestion = null;
 			}
 		}
 	}

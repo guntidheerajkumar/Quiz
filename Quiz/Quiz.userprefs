@@ -1,17 +1,10 @@
 ﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz/StudentCollectionViewController.cs">
     <Files>
-      <File FileName="Quiz Status" />
+      <File FileName="Quiz/IntroQuizViewController.cs" Line="77" Column="3" />
+      <File FileName="Quiz/StudentJoinViewController.cs" Line="43" Column="76" />
+      <File FileName="Quiz/StudentCollectionViewController.cs" Line="36" Column="76" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Quiz" expanded="True" selected="True">
-            <Node name="Quiz" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

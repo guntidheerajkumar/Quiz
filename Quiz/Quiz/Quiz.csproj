@@ -131,6 +131,23 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-1242%403x~iphone6s-portrait_1242x2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-750%402x~iphone6-portrait_750x1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait~ipad_768x1024.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait%402x~ipad_1536x2048.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape~ipad_1024x768.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-small.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-50%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-72%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -180,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\Background.jpg" />
+    <BundleResource Include="Resources\Page_background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="signalr">

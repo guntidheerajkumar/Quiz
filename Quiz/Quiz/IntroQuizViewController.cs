@@ -22,6 +22,7 @@ namespace Quiz
 			QuizTableView.Source = source;
 			QuizTableView.ReloadData();
 			QuizTableView.TableFooterView = new UIView();
+			this.Title = "Quiz Topics";
 		}
 
 		private async Task<List<SmartQuiz>> GetQuizInfo()

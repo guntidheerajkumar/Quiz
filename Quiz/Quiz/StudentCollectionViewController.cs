@@ -16,21 +16,24 @@ namespace Quiz
 		{
 		}
 
-		public async override void ViewDidLoad()
+		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			this.CollectionView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromBundle("Page_background.jpg"));
+			this.Title = "Welcome to Smart Student";
+		}
+
+		public async override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
 			students = new List<SmartStudent>();
 			this.Title = "Students";
 			this.View.BackgroundColor = UIColor.White;
 			var joinRepository = new StudentRepository();
 			students = await joinRepository.GetStudents();
 			CollectionView.ReloadData();
-		}
 
-		public override void ViewWillAppear(bool animated)
-		{
-			base.ViewWillAppear(animated);
-			CollectionView.Frame = new CGRect(60, 70, this.View.Frame.Width - 120, CollectionView.Frame.Height);
+			CollectionView.Frame = new CGRect(0, 0, this.View.Frame.Width, CollectionView.Frame.Height);
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
 
 		}
@@ -54,22 +57,22 @@ namespace Quiz
 			return studentCell;
 		}
 
-		public override void ItemHighlighted(UICollectionView collectionView, NSIndexPath indexPath)
-		{
-			var cell = collectionView.CellForItem(indexPath);
-			cell.ContentView.BackgroundColor = UIColor.Yellow;
-		}
+		//public override void ItemHighlighted(UICollectionView collectionView, NSIndexPath indexPath)
+		//{
+		//	var cell = collectionView.CellForItem(indexPath);
+		//	cell.ContentView.BackgroundColor = UIColor.Yellow;
+		//}
 
-		public override void ItemUnhighlighted(UICollectionView collectionView, NSIndexPath indexPath)
-		{
-			var cell = collectionView.CellForItem(indexPath);
-			cell.ContentView.BackgroundColor = UIColor.White;
-		}
+		//public override void ItemUnhighlighted(UICollectionView collectionView, NSIndexPath indexPath)
+		//{
+		//	var cell = collectionView.CellForItem(indexPath);
+		//	cell.ContentView.BackgroundColor = UIColor.White;
+		//}
 
-		public override bool ShouldHighlightItem(UICollectionView collectionView, NSIndexPath indexPath)
-		{
-			return true;
-		}
+		//public override bool ShouldHighlightItem(UICollectionView collectionView, NSIndexPath indexPath)
+		//{
+		//	return false;
+		//}
 	}
 
 	public class CollectionCell : UICollectionViewCell
@@ -82,16 +85,16 @@ namespace Quiz
 		{
 			ContentView.Layer.BorderColor = UIColor.LightGray.CGColor;
 			ContentView.Layer.BorderWidth = 1.0f;
-			ContentView.BackgroundColor = UIColor.White;
-			ContentView.Frame = new CGRect(0, 0, 200, 200);
+			ContentView.BackgroundColor = UIColor.Clear;
+			//ContentView.Frame = new CGRect(0, 0, 200, 200);
 
 			imageView = new UIImageView();
-			imageView.Frame = new CGRect(0, 0, 200, 200);
+			imageView.Frame = new CGRect(0, 0, 150, 150);
 
 			titleLabel = new UILabel();
-			titleLabel.Frame = new CGRect(0, imageView.Frame.Height + 5, 200, 30);
+			titleLabel.Frame = new CGRect(0, imageView.Frame.Height + 5, 150, 30);
 			titleLabel.TextAlignment = UITextAlignment.Center;
-			titleLabel.TextColor = UIColor.Black;
+			titleLabel.TextColor = UIColor.White;
 
 			ContentView.AddSubview(titleLabel);
 			ContentView.AddSubview(imageView);

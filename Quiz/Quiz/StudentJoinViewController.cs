@@ -23,6 +23,8 @@ namespace Quiz
 			StudenImage.UserInteractionEnabled = true;
 			StudenImage.AddGestureRecognizer(tapGuestureRecognizer);
 
+			this.Title = "Smart Student - Join";
+
 			JoinQuiz.TouchUpInside += async (sender, e) => {
 				SmartStudent student = new SmartStudent();
 				student.StudentName = StudentNameField.Text;
@@ -37,11 +39,13 @@ namespace Quiz
 				student.LogInDateTime = DateTime.Now;
 				var joinRepository = new StudentRepository();
 				await joinRepository.AddStudent(student);
+				var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
+				NavigationController.PushViewController(studentCollectionViewController, true);
 			};
 
 			signal.NewQuizQuestionReceived += (sender, e) => {
 				this.InvokeOnMainThread(() => {
-					TxtQuizQuestion.Text += e.ToString();
+					//TxtQuizQuestion.Text += e.ToString();
 				});
 			};
 		}
