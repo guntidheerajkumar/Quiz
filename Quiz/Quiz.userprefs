@@ -1,16 +1,14 @@
 ﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
     <Files>
-      <File FileName="Quiz/IntroQuizViewController.cs" Line="24" Column="106" />
-      <File FileName="Quiz/StudentCollectionViewController.cs" Line="37" Column="114" />
-      <File FileName="Quiz/StudentJoinViewController.cs" Line="92" Column="6" />
+      <File FileName="Quiz/StudentCollectionViewController.cs" Line="59" Column="34" />
       <File FileName="Quiz Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Dheeraj/Quiz/Quiz/Quiz/ViewController.cs" relfile="Quiz/ViewController.cs" line="116" column="3" />
+      <Breakpoint file="/Dheeraj/Quiz/Quiz/Quiz/ViewController.cs" relfile="Quiz/ViewController.cs" line="109" column="3" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

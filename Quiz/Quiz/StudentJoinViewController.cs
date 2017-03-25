@@ -3,6 +3,7 @@ using BigTed;
 using CoreGraphics;
 using FloatLabeledEntry;
 using Foundation;
+using Quiz.Models;
 using Quiz.Repository;
 using UIKit;
 
@@ -35,11 +36,13 @@ namespace Quiz
 
 			this.Title = "Smart Student - Join";
 
+			LblSelectedTopic.Text = $"Selected Quiz Topic - {SelectedQuizTopic.TopicName}";
+
 			StudentNameField = new FloatLabeledTextField(new CGRect(0, 40, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
 				Font = UIFont.SystemFontOfSize(FieldFontSize),
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
 				BackgroundColor = UIColor.White,
-				FloatingLabelFont = UIFont.BoldSystemFontOfSize(FieldFloatingLabelFontSize),
+				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
 				FloatingLabelTextColor = floatingLabelColor,
 				FloatingLabelActiveTextColor = floatingLabelActiveColor
 			};
@@ -48,7 +51,7 @@ namespace Quiz
 				Font = UIFont.SystemFontOfSize(FieldFontSize),
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
 				BackgroundColor = UIColor.White,
-				FloatingLabelFont = UIFont.BoldSystemFontOfSize(FieldFloatingLabelFontSize),
+				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
 				FloatingLabelTextColor = floatingLabelColor,
 				FloatingLabelActiveTextColor = floatingLabelActiveColor
 			};
@@ -57,7 +60,7 @@ namespace Quiz
 				Font = UIFont.SystemFontOfSize(FieldFontSize),
 				BackgroundColor = UIColor.White,
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
-				FloatingLabelFont = UIFont.BoldSystemFontOfSize(FieldFloatingLabelFontSize),
+				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
 				FloatingLabelTextColor = floatingLabelColor,
 				FloatingLabelActiveTextColor = floatingLabelActiveColor
 			};

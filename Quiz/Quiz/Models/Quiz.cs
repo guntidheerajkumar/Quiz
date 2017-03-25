@@ -15,4 +15,9 @@ namespace Quiz.Models
 		public string Name { get; set; }
 		public string Description { get; set; }
 	}
+
+	public class SelectedQuizTopic
+	{
+		public static string TopicName { get; set; }
+	}
 }

@@ -135,18 +135,26 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-MW-FVv">
+                                <rect key="frame" x="144" y="149" width="485" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="DataPlaceHodler" destination="cla-V3-jDj" id="ZLs-Vd-rbh"/>
                         <outlet property="JoinQuiz" destination="uMK-Cm-RMv" id="Ztk-iU-jBb"/>
+                        <outlet property="LblSelectedTopic" destination="NwK-MW-FVv" id="qSi-P9-M3k"/>
                         <outlet property="StudenImage" destination="0cb-Ol-AVd" id="d6F-t8-sny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whJ-FI-I8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="-2152"/>
+            <point key="canvasLocation" x="-144.53125" y="-2152.1484375"/>
         </scene>
         <!--Intro Quiz View Controller-->
         <scene sceneID="U4r-Re-ESE">
@@ -234,6 +242,6 @@
     <resources>
         <image name="JoinQuiz.png" width="300" height="40"/>
         <image name="Page_background.jpg" width="1040" height="1526"/>
-        <image name="placeholder.png" width="300" height="300"/>
+        <image name="placeholder.png" width="270" height="270"/>
     </resources>
 </document>

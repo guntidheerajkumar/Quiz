@@ -49,7 +49,7 @@ namespace Quiz
 						this.InvokeOnMainThread(async () => {
 							students = await joinRepository.GetStudents();
 							CollectionView.ReloadData();
-							this.Title = $"{response.TextToSpeech}";
+							BTProgressHUD.Show(response.TextToSpeech);
 							TextToSpeech(response.TextToSpeech);
 						});
 					}
@@ -57,17 +57,18 @@ namespace Quiz
 					if (e.Command == "QuizReadyToStart") {
 						this.InvokeOnMainThread(() => {
 							this.Title = "Quiz Start";
+							BTProgressHUD.Dismiss();
 							TextToSpeech($"Quiz is going to start with {students.Count} students");
 							TextToSpeech(response.TextToSpeech);
 							foreach (var item in students) {
 								TextToSpeech($"{item.StudentName} from {item.SchoolName}");
-								studentCount += 1;
-								if (studentCount == students.Count) {
-									var quizIntervalViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("QuizIntervalViewController");
-									NavigationController.PushViewController(quizIntervalViewController, true);
-								}
 							}
 						});
+
+						//if (studentCount == students.Count) {
+						//		var quizIntervalViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("QuizIntervalViewController");
+						//		NavigationController.PushViewController(quizIntervalViewController, true);
+						//	}
 					}
 				});
 			};

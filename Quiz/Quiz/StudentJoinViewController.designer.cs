@@ -19,23 +19,31 @@ namespace Quiz
 		UIKit.UIButton JoinQuiz { get; set; }
 
 		[Outlet]
+		UIKit.UILabel LblSelectedTopic { get; set; }
+
+		[Outlet]
 		UIKit.UIImageView StudenImage { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (JoinQuiz != null) {
-				JoinQuiz.Dispose ();
-				JoinQuiz = null;
-			}
-
 			if (DataPlaceHodler != null) {
 				DataPlaceHodler.Dispose ();
 				DataPlaceHodler = null;
 			}
 
+			if (JoinQuiz != null) {
+				JoinQuiz.Dispose ();
+				JoinQuiz = null;
+			}
+
 			if (StudenImage != null) {
 				StudenImage.Dispose ();
 				StudenImage = null;
+			}
+
+			if (LblSelectedTopic != null) {
+				LblSelectedTopic.Dispose ();
+				LblSelectedTopic = null;
 			}
 		}
 	}
