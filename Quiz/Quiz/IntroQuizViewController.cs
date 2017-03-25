@@ -21,7 +21,7 @@ namespace Quiz
 		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			BTProgressHUD.Show(status: "Please wait.. Loading Quiz Topics", maskType: ProgressHUD.MaskType.Black);
+			BTProgressHUD.Show(status: "Please wait \n\nLoading Quiz Topics", maskType: ProgressHUD.MaskType.Black);
 			var source = new SmartQuizTableSource(await GetQuizInfo());
 			source.NavigationController = this.NavigationController;
 			QuizTableView.Source = source;
@@ -75,8 +75,8 @@ namespace Quiz
 			cell.DetailTextLabel.Text = item.Description;
 
 			cell.BackgroundColor = UIColor.Clear;
-			cell.TextLabel.Font = UIFont.BoldSystemFontOfSize(24f);
-			cell.DetailTextLabel.Font = UIFont.SystemFontOfSize(18f);
+			cell.TextLabel.Font = UIFont.FromName("HelveticaNeue-Thin", 24f);
+			cell.DetailTextLabel.Font = UIFont.FromName("HelveticaNeue-Thin", 16f);
 
 			cell.TextLabel.TextColor = UIColor.FromRGB(245, 127, 90);
 			cell.DetailTextLabel.TextColor = UIColor.FromRGB(64, 163, 166);

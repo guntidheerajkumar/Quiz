@@ -24,16 +24,14 @@ namespace Quiz
 		{
 			base.ViewDidLoad();
 			this.CollectionView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromBundle("Page_background.jpg"));
-			this.Title = "Welcome to Smart Student";
 			this.NavigationItem.HidesBackButton = true;
 		}
 
 		public async override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
-			BTProgressHUD.Show(status: "Please wait.. Loading Quiz Participants..", maskType: ProgressHUD.MaskType.Black);
+			BTProgressHUD.Show(status: "Please wait \n\n Loading Quiz Participants", maskType: ProgressHUD.MaskType.Black);
 			students = new List<SmartStudent>();
-			this.Title = "Students";
 			this.View.BackgroundColor = UIColor.White;
 			var joinRepository = new StudentRepository();
 			students = await joinRepository.GetStudents();
@@ -49,7 +47,7 @@ namespace Quiz
 						this.InvokeOnMainThread(async () => {
 							students = await joinRepository.GetStudents();
 							CollectionView.ReloadData();
-							BTProgressHUD.Show(response.TextToSpeech);
+							BTProgressHUD.Show(response.TextToSpeech, maskType: ProgressHUD.MaskType.Black);
 							TextToSpeech(response.TextToSpeech);
 						});
 					}
@@ -119,6 +117,7 @@ namespace Quiz
 			titleLabel.Frame = new CGRect(0, imageView.Frame.Height + 5, 200, 50);
 			titleLabel.TextAlignment = UITextAlignment.Center;
 			titleLabel.Lines = 0;
+			titleLabel.Font = UIFont.FromName("HelveticaNeue-Thin", 18f);
 			titleLabel.TextColor = UIColor.White;
 
 			ContentView.AddSubview(titleLabel);

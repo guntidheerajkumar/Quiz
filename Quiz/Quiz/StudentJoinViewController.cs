@@ -39,7 +39,7 @@ namespace Quiz
 			LblSelectedTopic.Text = $"Selected Quiz Topic - {SelectedQuizTopic.TopicName}";
 
 			StudentNameField = new FloatLabeledTextField(new CGRect(0, 40, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
-				Font = UIFont.SystemFontOfSize(FieldFontSize),
+				Font = UIFont.FromName("HelveticaNeue-Thin", FieldFontSize),
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
 				BackgroundColor = UIColor.White,
 				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
@@ -48,7 +48,7 @@ namespace Quiz
 			};
 
 			StudentSchoolField = new FloatLabeledTextField(new CGRect(0, 110, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
-				Font = UIFont.SystemFontOfSize(FieldFontSize),
+				Font = UIFont.FromName("HelveticaNeue-Thin", FieldFontSize),
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
 				BackgroundColor = UIColor.White,
 				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
@@ -57,7 +57,7 @@ namespace Quiz
 			};
 
 			StudentAgeField = new FloatLabeledTextField(new CGRect(0, 180, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
-				Font = UIFont.SystemFontOfSize(FieldFontSize),
+				Font = UIFont.FromName("HelveticaNeue-Thin", FieldFontSize),
 				BackgroundColor = UIColor.White,
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
 				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
@@ -75,7 +75,7 @@ namespace Quiz
 
 
 			JoinQuiz.TouchUpInside += async (sender, e) => {
-				BTProgressHUD.Show(status: "Please wait... Joining in to Quiz...", maskType: ProgressHUD.MaskType.Black);
+				BTProgressHUD.Show(status: "Please wait \n\n Joining in to Quiz", maskType: ProgressHUD.MaskType.Black);
 				SmartStudent student = new SmartStudent();
 				student.StudentName = StudentNameField.Text;
 				student.SchoolName = StudentSchoolField.Text;

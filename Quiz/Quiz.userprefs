@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz/StudentCollectionViewController.cs">
     <Files>
-      <File FileName="Quiz/StudentCollectionViewController.cs" Line="59" Column="34" />
-      <File FileName="Quiz Status" />
+      <File FileName="Quiz/StudentJoinViewController.cs" Line="82" Column="58" />
+      <File FileName="Quiz/StudentCollectionViewController.cs" Line="50" Column="55" />
+      <File FileName="Quiz/IntroQuizViewController.cs" Line="24" Column="68" />
+      <File FileName="Quiz/Main.cs" Line="19" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
