@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="-206"/>
+            <point key="canvasLocation" x="-3812" y="363"/>
         </scene>
         <!--Student Collection View Controller-->
         <scene sceneID="xzQ-YD-Tog">
@@ -99,7 +99,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUT-2X-qaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="-206"/>
+            <point key="canvasLocation" x="713" y="-2152"/>
         </scene>
         <!--Student Join View Controller-->
         <scene sceneID="LKA-Ao-MP9">
@@ -118,93 +118,35 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cla-V3-jDj">
-                                <rect key="frame" x="165" y="265" width="438" height="495"/>
+                                <rect key="frame" x="165" y="265" width="438" height="521"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3H-gT-Mee">
-                                        <rect key="frame" x="54" y="33" width="330" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7I6-o0-i6X">
-                                        <rect key="frame" x="54" y="62" width="330" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-WC-XgV">
-                                        <rect key="frame" x="54" y="100" width="330" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-lZ-1Cw">
-                                        <rect key="frame" x="54" y="129" width="330" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQO-QI-4f5">
-                                        <rect key="frame" x="54" y="174" width="330" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7o5-ee-wkS">
-                                        <rect key="frame" x="54" y="203" width="330" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="0cb-Ol-AVd">
-                                        <rect key="frame" x="130" y="247" width="179" height="182"/>
+                                        <rect key="frame" x="129" y="279" width="179" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMK-Cm-RMv">
-                                        <rect key="frame" x="54" y="449" width="330" height="30"/>
+                                        <rect key="frame" x="70" y="481" width="300" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Join"/>
+                                        <state key="normal" backgroundImage="JoinQuiz.png"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1j-RC-in9">
-                                <rect key="frame" x="521" y="829" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Skip"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="DataPlaceHodler" destination="cla-V3-jDj" id="ZLs-Vd-rbh"/>
                         <outlet property="JoinQuiz" destination="uMK-Cm-RMv" id="Ztk-iU-jBb"/>
-                        <outlet property="SkipToQuiz" destination="S1j-RC-in9" id="5H8-il-IIZ"/>
                         <outlet property="StudenImage" destination="0cb-Ol-AVd" id="d6F-t8-sny"/>
-                        <outlet property="StudentAgeField" destination="7o5-ee-wkS" id="eJQ-i8-09G"/>
-                        <outlet property="StudentNameField" destination="7I6-o0-i6X" id="jcG-fV-FqV"/>
-                        <outlet property="StudentSchoolField" destination="o7M-lZ-1Cw" id="O5K-vJ-Zhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whJ-FI-I8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241.40625" y="-206.25"/>
+            <point key="canvasLocation" x="-144" y="-2152"/>
         </scene>
         <!--Intro Quiz View Controller-->
         <scene sceneID="U4r-Re-ESE">
@@ -219,11 +161,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Page_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DKS-OH-0R9">
-                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-iI-mZW">
-                                <rect key="frame" x="20" y="94" width="728" height="350"/>
+                                <rect key="frame" x="54" y="94" width="660" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -232,14 +174,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RNh-cZ-zGN"/>
+                    <navigationItem key="navigationItem" id="ts4-8C-coC"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="QuizTableView" destination="8sq-iI-mZW" id="Kq4-kC-Sv9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAm-RE-XdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1565.625" y="519.7265625"/>
+            <point key="canvasLocation" x="-953" y="-2152"/>
         </scene>
         <!--Quiz Interval View Controller-->
         <scene sceneID="j7s-Wz-tZl">
@@ -252,34 +195,45 @@
                     <view key="view" contentMode="scaleToFill" id="qPH-oL-Vf2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Page_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7NQ-RH-Nho">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p22-8Q-BNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2223" y="546"/>
+            <point key="canvasLocation" x="1542" y="-2152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LWd-9o-Zpf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hDH-Wh-WqW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hDH-Wh-WqW" customClass="NavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gk4-v3-h4F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dNF-nU-GcQ">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="Fjw-FE-ZDl" kind="relationship" relationship="rootViewController" id="O0n-KT-ERb"/>
+                        <segue destination="Fjw-FE-ZDl" kind="relationship" relationship="rootViewController" id="Tpp-yp-QeB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhD-rU-bbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31" y="-206"/>
+            <point key="canvasLocation" x="-1819" y="-2152"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Page_background.jpg" width="1588" height="2246"/>
+        <image name="JoinQuiz.png" width="300" height="40"/>
+        <image name="Page_background.jpg" width="1040" height="1526"/>
         <image name="placeholder.png" width="300" height="300"/>
     </resources>
 </document>

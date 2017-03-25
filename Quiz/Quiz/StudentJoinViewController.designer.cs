@@ -13,22 +13,13 @@ namespace Quiz
 	partial class StudentJoinViewController
 	{
 		[Outlet]
+		UIKit.UIView DataPlaceHodler { get; set; }
+
+		[Outlet]
 		UIKit.UIButton JoinQuiz { get; set; }
 
 		[Outlet]
-		UIKit.UIButton SkipToQuiz { get; set; }
-
-		[Outlet]
 		UIKit.UIImageView StudenImage { get; set; }
-
-		[Outlet]
-		UIKit.UITextField StudentAgeField { get; set; }
-
-		[Outlet]
-		UIKit.UITextField StudentNameField { get; set; }
-
-		[Outlet]
-		UIKit.UITextField StudentSchoolField { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -37,29 +28,14 @@ namespace Quiz
 				JoinQuiz = null;
 			}
 
+			if (DataPlaceHodler != null) {
+				DataPlaceHodler.Dispose ();
+				DataPlaceHodler = null;
+			}
+
 			if (StudenImage != null) {
 				StudenImage.Dispose ();
 				StudenImage = null;
-			}
-
-			if (StudentAgeField != null) {
-				StudentAgeField.Dispose ();
-				StudentAgeField = null;
-			}
-
-			if (StudentNameField != null) {
-				StudentNameField.Dispose ();
-				StudentNameField = null;
-			}
-
-			if (StudentSchoolField != null) {
-				StudentSchoolField.Dispose ();
-				StudentSchoolField = null;
-			}
-
-			if (SkipToQuiz != null) {
-				SkipToQuiz.Dispose ();
-				SkipToQuiz = null;
 			}
 		}
 	}

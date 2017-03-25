@@ -134,27 +134,29 @@
     <Reference Include="Plugin.TextToSpeech">
       <HintPath>..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\Xamarin.iOS10\Plugin.TextToSpeech.dll</HintPath>
     </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.3\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-small%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-50%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-72%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-small.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-1242%403x~iphone6s-portrait_1242x2208.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-750%402x~iphone6-portrait_750x1334.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait~ipad_768x1024.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait%402x~ipad_1536x2048.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape~ipad_1024x768.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-small.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-small%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-50%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-72%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -206,17 +208,28 @@
       <DependentUpon>QuizIntervalViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SignalrResponse.cs" />
+    <Compile Include="NavigationController.cs" />
+    <Compile Include="NavigationController.designer.cs">
+      <DependentUpon>NavigationController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
     <BundleResource Include="Resources\Background.jpg" />
     <BundleResource Include="Resources\Page_background.jpg" />
+    <BundleResource Include="Resources\JoinQuiz.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="signalr">
       <Version>2.1.2.2</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FloatLabeledEntry.iOS\FloatLabeledEntry.iOS.csproj">
+      <Project>{5D6A24DE-BDD5-477F-A203-0F41ABBA26E5}</Project>
+      <Name>FloatLabeledEntry.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

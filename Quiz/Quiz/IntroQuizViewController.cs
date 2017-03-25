@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BigTed;
 using Foundation;
+using Quiz.Listeners;
 using Quiz.Models;
 using Quiz.Repository;
 using UIKit;
@@ -10,19 +12,24 @@ namespace Quiz
 {
 	public partial class IntroQuizViewController : UIViewController
 	{
+
 		public IntroQuizViewController(IntPtr handle) : base(handle)
 		{
+
 		}
 
 		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			BTProgressHUD.Show(status: "Please wait.. Loading Quiz Topics", maskType: ProgressHUD.MaskType.Black);
 			var source = new SmartQuizTableSource(await GetQuizInfo());
 			source.NavigationController = this.NavigationController;
 			QuizTableView.Source = source;
 			QuizTableView.ReloadData();
 			QuizTableView.TableFooterView = new UIView();
 			this.Title = "Quiz Topics";
+			BTProgressHUD.Dismiss();
+			await AppDelegate.signal.StartListening();
 		}
 
 		private async Task<List<SmartQuiz>> GetQuizInfo()
@@ -71,6 +78,7 @@ namespace Quiz
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
+			tableView.DeselectRow(indexPath, false);
 			var studentJoinViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentJoinViewController");
 			NavigationController.PushViewController(studentJoinViewController, true);
 		}

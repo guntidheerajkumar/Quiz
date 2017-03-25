@@ -1,21 +1,29 @@
 using System;
+using BigTed;
 using CoreGraphics;
+using FloatLabeledEntry;
 using Foundation;
-using UIKit;
-using Quiz.Listeners;
 using Quiz.Repository;
+using UIKit;
 
 namespace Quiz
 {
 	public partial class StudentJoinViewController : UIViewController
 	{
 		UIImagePickerController imagePicker;
+		private const float FieldHeight = 55.0f;
+		private const float FieldHMargin = 10.0f;
+		private const float FieldFontSize = 20.0f;
+		private const float FieldFloatingLabelFontSize = 14.0f;
+		private FloatLabeledTextField StudentNameField;
+		private FloatLabeledTextField StudentSchoolField;
+		private FloatLabeledTextField StudentAgeField;
 
 		public StudentJoinViewController(IntPtr handle) : base(handle)
 		{
 		}
 
-		public async override void ViewDidLoad()
+		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 
@@ -23,12 +31,48 @@ namespace Quiz
 			StudenImage.UserInteractionEnabled = true;
 			StudenImage.AddGestureRecognizer(tapGuestureRecognizer);
 
+			UIColor floatingLabelColor = UIColor.FromRGB(245, 127, 90), floatingLabelActiveColor = UIColor.FromRGB(64, 163, 166);
+
 			this.Title = "Smart Student - Join";
-			StudentNameField.Text = "Text name";
-			StudentSchoolField.Text = "Text school";
-			StudentAgeField.Text = "33";
+
+			StudentNameField = new FloatLabeledTextField(new CGRect(0, 40, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
+				Font = UIFont.SystemFontOfSize(FieldFontSize),
+				ClearButtonMode = UITextFieldViewMode.WhileEditing,
+				BackgroundColor = UIColor.White,
+				FloatingLabelFont = UIFont.BoldSystemFontOfSize(FieldFloatingLabelFontSize),
+				FloatingLabelTextColor = floatingLabelColor,
+				FloatingLabelActiveTextColor = floatingLabelActiveColor
+			};
+
+			StudentSchoolField = new FloatLabeledTextField(new CGRect(0, 110, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
+				Font = UIFont.SystemFontOfSize(FieldFontSize),
+				ClearButtonMode = UITextFieldViewMode.WhileEditing,
+				BackgroundColor = UIColor.White,
+				FloatingLabelFont = UIFont.BoldSystemFontOfSize(FieldFloatingLabelFontSize),
+				FloatingLabelTextColor = floatingLabelColor,
+				FloatingLabelActiveTextColor = floatingLabelActiveColor
+			};
+
+			StudentAgeField = new FloatLabeledTextField(new CGRect(0, 180, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
+				Font = UIFont.SystemFontOfSize(FieldFontSize),
+				BackgroundColor = UIColor.White,
+				ClearButtonMode = UITextFieldViewMode.WhileEditing,
+				FloatingLabelFont = UIFont.BoldSystemFontOfSize(FieldFloatingLabelFontSize),
+				FloatingLabelTextColor = floatingLabelColor,
+				FloatingLabelActiveTextColor = floatingLabelActiveColor
+			};
+
+			SetPadding(StudentNameField, 10);
+			SetPadding(StudentSchoolField, 10);
+			SetPadding(StudentAgeField, 10);
+
+			StudentSchoolField.Placeholder = "School Name";
+			StudentNameField.Placeholder = "Student Name";
+			StudentAgeField.Placeholder = "Student Age";
+
 
 			JoinQuiz.TouchUpInside += async (sender, e) => {
+				BTProgressHUD.Show(status: "Please wait... Joining in to Quiz...", maskType: ProgressHUD.MaskType.Black);
 				SmartStudent student = new SmartStudent();
 				student.StudentName = StudentNameField.Text;
 				student.SchoolName = StudentSchoolField.Text;
@@ -42,14 +86,12 @@ namespace Quiz
 				student.LogInDateTime = DateTime.Now;
 				var joinRepository = new StudentRepository();
 				await joinRepository.AddStudent(student);
+				BTProgressHUD.Dismiss();
 				var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
 				NavigationController.PushViewController(studentCollectionViewController, true);
 			};
 
-			SkipToQuiz.TouchUpInside += (sender, e) => {
-				var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
-				NavigationController.PushViewController(studentCollectionViewController, true);
-			};
+			this.DataPlaceHodler.AddSubviews(StudentNameField, StudentSchoolField, StudentAgeField);
 		}
 
 		private void OnSelectImage()
@@ -104,6 +146,13 @@ namespace Quiz
 		void Handle_Canceled(object sender, EventArgs e)
 		{
 			imagePicker.DismissViewController(true, null);
+		}
+
+		public static void SetPadding(FloatLabeledTextField f, int padding)
+		{
+			UIView paddingView = new UIView(new CGRect(0, 0, padding, 20));
+			f.LeftView = paddingView;
+			f.LeftViewMode = UITextFieldViewMode.Always;
 		}
 	}
 }

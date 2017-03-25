@@ -6,6 +6,7 @@
 // Copyright (c) 2017 (c) Dheeraj Kumar Gunti
 //
 using Foundation;
+using Quiz.Listeners;
 using UIKit;
 
 namespace Quiz
@@ -15,6 +16,7 @@ namespace Quiz
 	[Register("AppDelegate")]
 	public class AppDelegate : UIApplicationDelegate
 	{
+		public static QuizListener signal = new QuizListener();
 		// class-level declarations
 
 		public override UIWindow Window {
