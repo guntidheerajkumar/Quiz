@@ -4,14 +4,17 @@ using System.Threading.Tasks;
 using CoreGraphics;
 using Foundation;
 using Quiz.Listeners;
+using Plugin.TextToSpeech;
 using Quiz.Repository;
 using UIKit;
+using AVFoundation;
 
 namespace Quiz
 {
 	public partial class StudentCollectionViewController : UICollectionViewController
 	{
 		static NSString studentCellId = new NSString("CollectionCell");
+		AVSpeechSynthesizer speechSynthesizer = new AVSpeechSynthesizer();
 		List<SmartStudent> students;
 		private QuizListener signal = new QuizListener();
 		public StudentCollectionViewController(IntPtr handle) : base(handle)
@@ -38,21 +41,37 @@ namespace Quiz
 			CollectionView.ReloadData();
 			CollectionView.Frame = new CGRect(0, 0, this.View.Frame.Width, CollectionView.Frame.Height);
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
+			TextToSpeech($"Welcome to Smart Student Quiz, we have {students.Count} boarded right now.");
 			signal.StudentResponseReceived += (sender, e) => {
 				this.InvokeOnMainThread(() => {
-					if (e.Command == "BoardingTime") {
-						this.InvokeOnMainThread(() => {
-							var response = (SignalrResponse)e;
-							this.Title = $"Time Remaining : {response.Data.ToString()}";
-						});
-					} else if (e.Command == "BoardingStudents") {
+					var response = (SignalrResponse)e;
+					if (e.Command == "BoardingStudents") {
 						this.InvokeOnMainThread(async () => {
 							students = await joinRepository.GetStudents();
 							CollectionView.ReloadData();
+							this.Title = $"{response.TextToSpeech}";
+							TextToSpeech(response.TextToSpeech);
 						});
+					}
+
+					if (e.Command == "QuizReadyToStart") {
+						this.Title = "Quiz Start";
+						TextToSpeech($"Quiz is going to start with {students.Count} students");
+						TextToSpeech(response.TextToSpeech);
+						foreach (var item in students) {
+							TextToSpeech($" we got {item.StudentName} from {item.SchoolName}");
+						}
 					}
 				});
 			};
+		}
+
+		private void TextToSpeech(string speech)
+		{
+			var speechUtterance = new AVSpeechUtterance(speech);
+			speechUtterance.InvokeOnMainThread(async () => {
+				speechSynthesizer.SpeakUtterance(speechUtterance);
+			});
 		}
 
 		public override nint NumberOfSections(UICollectionView collectionView)
