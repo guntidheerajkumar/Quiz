@@ -24,6 +24,9 @@ namespace Quiz
 			StudenImage.AddGestureRecognizer(tapGuestureRecognizer);
 
 			this.Title = "Smart Student - Join";
+			StudentNameField.Text = "Text name";
+			StudentSchoolField.Text = "Text school";
+			StudentAgeField.Text = "33";
 
 			JoinQuiz.TouchUpInside += async (sender, e) => {
 				SmartStudent student = new SmartStudent();

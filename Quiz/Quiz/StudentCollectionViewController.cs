@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CoreGraphics;
 using Foundation;
 using Quiz.Listeners;
@@ -39,8 +40,17 @@ namespace Quiz
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
 			signal.StudentResponseReceived += (sender, e) => {
 				this.InvokeOnMainThread(() => {
-					var response = (SignalrResponse)e;
-					this.Title = $"Time Remaining : {e.Data.ToString()}";
+					if (e.Command == "BoardingTime") {
+						this.InvokeOnMainThread(() => {
+							var response = (SignalrResponse)e;
+							this.Title = $"Time Remaining : {response.Data.ToString()}";
+						});
+					} else if (e.Command == "BoardingStudents") {
+						this.InvokeOnMainThread(async () => {
+							students = await joinRepository.GetStudents();
+							CollectionView.ReloadData();
+						});
+					}
 				});
 			};
 		}
