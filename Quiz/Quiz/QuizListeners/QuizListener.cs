@@ -10,16 +10,16 @@ namespace Quiz.Listeners
 		private HubConnection _connection;
 		private IHubProxy _proxy;
 
-		public event EventHandler<string> NewQuizQuestionReceived;
+		public event EventHandler<SignalrResponse> StudentResponseReceived;
 
 		public async Task StartListening()
 		{
 			_connection = new HubConnection(Url);
 			_proxy = _connection.CreateHubProxy("SmartStudentHub");
 
-			_proxy.On<string>("UpdateCommand", quizdata => {
-				if (NewQuizQuestionReceived != null)
-					NewQuizQuestionReceived.Invoke(this, quizdata);
+			_proxy.On<SignalrResponse>("StudentResponseCommand", quizdata => {
+				if (StudentResponseReceived != null)
+					StudentResponseReceived.Invoke(this, quizdata);
 			});
 
 			await _connection.Start();

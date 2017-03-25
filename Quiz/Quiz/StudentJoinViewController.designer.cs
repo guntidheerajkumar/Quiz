@@ -16,6 +16,9 @@ namespace Quiz
 		UIKit.UIButton JoinQuiz { get; set; }
 
 		[Outlet]
+		UIKit.UIButton SkipToQuiz { get; set; }
+
+		[Outlet]
 		UIKit.UIImageView StudenImage { get; set; }
 
 		[Outlet]
@@ -52,6 +55,11 @@ namespace Quiz
 			if (StudentSchoolField != null) {
 				StudentSchoolField.Dispose ();
 				StudentSchoolField = null;
+			}
+
+			if (SkipToQuiz != null) {
+				SkipToQuiz.Dispose ();
+				SkipToQuiz = null;
 			}
 		}
 	}

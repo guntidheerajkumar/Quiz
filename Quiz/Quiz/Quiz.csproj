@@ -115,9 +115,6 @@
     <Reference Include="EZCompress1.Plugin">
       <HintPath>..\packages\JosephAntolick.EZCompress1.Plugin.1.0.0.0\lib\Xamarin.iOS10\EZCompress1.Plugin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Client">
-      <HintPath>..\Components\signalr-2.1.2.2\lib\ios-unified\Microsoft.AspNet.SignalR.Client.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\Components\signalr-2.1.2.2\lib\ios-unified\System.Net.Http.Extensions.dll</HintPath>
     </Reference>
@@ -127,6 +124,15 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.1\lib\portable-net45+sl50+win+wpa81+wp80\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\Xamarin.iOS10\Plugin.TextToSpeech.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech">
+      <HintPath>..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\Xamarin.iOS10\Plugin.TextToSpeech.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +201,11 @@
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="Services\StudentService.cs" />
     <Compile Include="QuizListeners\QuizListener.cs" />
+    <Compile Include="QuizIntervalViewController.cs" />
+    <Compile Include="QuizIntervalViewController.designer.cs">
+      <DependentUpon>QuizIntervalViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SignalrResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />

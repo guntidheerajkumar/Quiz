@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CoreGraphics;
 using Foundation;
+using Quiz.Listeners;
 using Quiz.Repository;
 using UIKit;
 
@@ -11,16 +12,18 @@ namespace Quiz
 	{
 		static NSString studentCellId = new NSString("CollectionCell");
 		List<SmartStudent> students;
-
+		private QuizListener signal = new QuizListener();
 		public StudentCollectionViewController(IntPtr handle) : base(handle)
 		{
 		}
 
-		public override void ViewDidLoad()
+		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 			this.CollectionView.BackgroundColor = UIColor.FromPatternImage(UIImage.FromBundle("Page_background.jpg"));
 			this.Title = "Welcome to Smart Student";
+			this.NavigationItem.HidesBackButton = true;
+			await signal.StartListening();
 		}
 
 		public async override void ViewWillAppear(bool animated)
@@ -32,10 +35,14 @@ namespace Quiz
 			var joinRepository = new StudentRepository();
 			students = await joinRepository.GetStudents();
 			CollectionView.ReloadData();
-
 			CollectionView.Frame = new CGRect(0, 0, this.View.Frame.Width, CollectionView.Frame.Height);
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
-
+			signal.StudentResponseReceived += (sender, e) => {
+				this.InvokeOnMainThread(() => {
+					var response = (SignalrResponse)e;
+					this.Title = $"Time Remaining : {e.Data.ToString()}";
+				});
+			};
 		}
 
 		public override nint NumberOfSections(UICollectionView collectionView)

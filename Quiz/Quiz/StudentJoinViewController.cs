@@ -10,7 +10,7 @@ namespace Quiz
 	public partial class StudentJoinViewController : UIViewController
 	{
 		UIImagePickerController imagePicker;
-		private QuizListener signal = new QuizListener();
+
 		public StudentJoinViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -18,7 +18,7 @@ namespace Quiz
 		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			await signal.StartListening();
+
 			var tapGuestureRecognizer = new UITapGestureRecognizer(OnSelectImage);
 			StudenImage.UserInteractionEnabled = true;
 			StudenImage.AddGestureRecognizer(tapGuestureRecognizer);
@@ -43,10 +43,9 @@ namespace Quiz
 				NavigationController.PushViewController(studentCollectionViewController, true);
 			};
 
-			signal.NewQuizQuestionReceived += (sender, e) => {
-				this.InvokeOnMainThread(() => {
-					//TxtQuizQuestion.Text += e.ToString();
-				});
+			SkipToQuiz.TouchUpInside += (sender, e) => {
+				var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
+				NavigationController.PushViewController(studentCollectionViewController, true);
 			};
 		}
 
