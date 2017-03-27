@@ -12,9 +12,31 @@ namespace Quiz
 	[Register ("QuizIntervalViewController")]
 	partial class QuizIntervalViewController
 	{
+		[Outlet]
+		UIKit.UIButton BtnLetsStart { get; set; }
+
+		[Outlet]
+		UIKit.UITextView LblQuizRules { get; set; }
+
+		[Outlet]
+		UIKit.UITableView QuizParticipantsTableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (LblQuizRules != null) {
+				LblQuizRules.Dispose ();
+				LblQuizRules = null;
+			}
+
+			if (QuizParticipantsTableView != null) {
+				QuizParticipantsTableView.Dispose ();
+				QuizParticipantsTableView = null;
+			}
+
+			if (BtnLetsStart != null) {
+				BtnLetsStart.Dispose ();
+				BtnLetsStart = null;
+			}
 		}
 	}
 }

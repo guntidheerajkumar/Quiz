@@ -12,7 +12,7 @@ namespace Quiz
 	public partial class StudentCollectionViewController : UICollectionViewController
 	{
 		static NSString studentCellId = new NSString("CollectionCell");
-		AVSpeechSynthesizer speechSynthesizer = new AVSpeechSynthesizer();
+
 		List<SmartStudent> students;
 		private int studentCount { get; set; } = 0;
 
@@ -39,7 +39,7 @@ namespace Quiz
 			BTProgressHUD.Dismiss();
 			CollectionView.Frame = new CGRect(0, 0, this.View.Frame.Width, CollectionView.Frame.Height);
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
-			TextToSpeech($"Welcome to Smart Student Quiz, we have {students.Count} boarded right now.");
+			Generic.TextToSpeech($"Welcome to Smart Student Quiz, we have {students.Count} boarded right now.");
 			AppDelegate.signal.StudentResponseReceived += (sender, e) => {
 				this.InvokeOnMainThread(() => {
 					var response = (SignalrResponse)e;
@@ -48,37 +48,25 @@ namespace Quiz
 							students = await joinRepository.GetStudents();
 							CollectionView.ReloadData();
 							BTProgressHUD.Show(response.TextToSpeech, maskType: ProgressHUD.MaskType.Black);
-							TextToSpeech(response.TextToSpeech);
+							Generic.TextToSpeech(response.TextToSpeech);
+
 						});
 					}
-
 					if (e.Command == "QuizReadyToStart") {
 						this.InvokeOnMainThread(() => {
 							this.Title = "Quiz Start";
 							BTProgressHUD.Dismiss();
-							TextToSpeech($"Quiz is going to start with {students.Count} students");
-							TextToSpeech(response.TextToSpeech);
-							foreach (var item in students) {
-								TextToSpeech($"{item.StudentName} from {item.SchoolName}");
-							}
+							Generic.TextToSpeech($"Quiz is going to start with {students.Count} students");
+							Generic.speechSynthesizer.DidFinishSpeechUtterance += (s, ee) => {
+								var quizIntervalViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("QuizIntervalViewController");
+								NavigationController.PushViewController(quizIntervalViewController, true);
+							};
 						});
-
-						//if (studentCount == students.Count) {
-						//		var quizIntervalViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("QuizIntervalViewController");
-						//		NavigationController.PushViewController(quizIntervalViewController, true);
-						//	}
 					}
 				});
 			};
 		}
 
-		private void TextToSpeech(string speech)
-		{
-			var speechUtterance = new AVSpeechUtterance(speech);
-			speechUtterance.InvokeOnMainThread(() => {
-				speechSynthesizer.SpeakUtterance(speechUtterance);
-			});
-		}
 
 		public override nint NumberOfSections(UICollectionView collectionView)
 		{

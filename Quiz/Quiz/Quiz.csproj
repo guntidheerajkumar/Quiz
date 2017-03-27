@@ -219,6 +219,14 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\ScoreBoard.cs" />
     <Compile Include="Models\BuzzerLog.cs" />
+    <Compile Include="QuizViewController.cs" />
+    <Compile Include="QuizViewController.designer.cs">
+      <DependentUpon>QuizViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipantTableViewCell.cs" />
+    <Compile Include="ParticipantTableViewCell.designer.cs">
+      <DependentUpon>ParticipantTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />

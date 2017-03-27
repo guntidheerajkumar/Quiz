@@ -6,6 +6,7 @@
 // Copyright (c) 2017 (c) Dheeraj Kumar Gunti
 //
 using System;
+using AVFoundation;
 using Foundation;
 using UIKit;
 
@@ -58,6 +59,17 @@ namespace Quiz
 				return null;
 			}
 			return image;
+		}
+	}
+
+	public class Generic
+	{
+		public static AVSpeechSynthesizer speechSynthesizer = new AVSpeechSynthesizer();
+
+		public static void TextToSpeech(string speech)
+		{
+			var speechUtterance = new AVSpeechUtterance(speech);
+			speechSynthesizer.SpeakUtterance(speechUtterance);
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace Quiz
 {
-	public class SignlarResponse
+	public class SignalrResponse
 	{
 		public string Command { get; set; }
 		public object Data { get; set; }
