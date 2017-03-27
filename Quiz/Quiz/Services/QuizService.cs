@@ -16,5 +16,17 @@ namespace Quiz.Services
 			var quizResult = JsonConvert.DeserializeObject<List<SmartQuiz>>(response.Content);
 			return quizResult;
 		}
+
+		//public async Task<IEnumerable<SmartQuiz>> ReadyForQuiz()
+		//{
+		//	var client = new RestClient(Constants.AzureUrl);
+		//	var input = new SmartStudentRequest();
+		//	var request = new RestRequest("QuizCommands", Method.POST);
+		//	input.Input = JsonConvert.SerializeObject(new QuizCommandRequest());
+		//	request.AddHeader("Content-Type", "application/json");
+		//	request.RequestFormat = DataFormat.Json;
+		//	request.AddObject(input);
+		//	return;
+		//}
 	}
 }

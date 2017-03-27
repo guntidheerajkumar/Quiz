@@ -36,9 +36,9 @@ namespace Quiz
 				this.InvokeOnMainThread(() => {
 					if (e.Command == "QuizReadyToStart") {
 						this.InvokeOnMainThread(() => {
-							Generic.TextToSpeech(response.TextToSpeech);
-							foreach (var item in students) {
-								Generic.TextToSpeech($"{item.StudentName} from {item.SchoolName}");
+							var rules = (List<string>)response.Data;
+							foreach (var item in rules) {
+								Generic.TextToSpeech(item);
 							}
 						});
 					}
@@ -46,6 +46,8 @@ namespace Quiz
 			};
 
 			BtnLetsStart.Layer.CornerRadius = BtnLetsStart.Frame.Width / 2;
+			BtnLetsStart.Layer.BorderWidth = 1f;
+			BtnLetsStart.Layer.BorderColor = UIColor.White.CGColor;
 		}
 	}
 

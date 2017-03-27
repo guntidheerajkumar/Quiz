@@ -44,12 +44,11 @@ namespace Quiz
 				this.InvokeOnMainThread(() => {
 					var response = (SignalrResponse)e;
 					if (e.Command == "BoardingStudents") {
-						this.InvokeOnMainThread(async () => {
-							students = await joinRepository.GetStudents();
+						this.InvokeOnMainThread(() => {
+							students = (List<SmartStudent>)response.Data;
 							CollectionView.ReloadData();
 							BTProgressHUD.Show(response.TextToSpeech, maskType: ProgressHUD.MaskType.Black);
 							Generic.TextToSpeech(response.TextToSpeech);
-
 						});
 					}
 					if (e.Command == "QuizReadyToStart") {

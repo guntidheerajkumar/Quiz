@@ -5,7 +5,7 @@ namespace Quiz.Repository
 {
 	public interface IStudentRepository
 	{
-		Task AddStudent(SmartStudent student);
+		Task<SmartStudent> AddStudent(SmartStudent student);
 
 		Task<List<SmartStudent>> GetStudents();
 	}

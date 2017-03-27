@@ -91,10 +91,13 @@ namespace Quiz
 				student.Age = Convert.ToInt32(StudentAgeField.Text);
 				student.LogInDateTime = DateTime.Now;
 				var joinRepository = new StudentRepository();
-				await joinRepository.AddStudent(student);
-				BTProgressHUD.Dismiss();
-				var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
-				NavigationController.PushViewController(studentCollectionViewController, true);
+				var studentData = await joinRepository.AddStudent(student);
+				if (studentData != null) {
+					BTProgressHUD.Dismiss();
+					Constants.StudentId = studentData.StudentId;
+					var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");
+					NavigationController.PushViewController(studentCollectionViewController, true);
+				}
 			};
 
 			this.DataPlaceHodler.AddSubviews(StudentNameField, StudentSchoolField, StudentAgeField);

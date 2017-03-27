@@ -7,10 +7,11 @@ namespace Quiz.Repository
 {
 	public class StudentRepository : IStudentRepository
 	{
-		public async Task AddStudent(SmartStudent student)
+		public async Task<SmartStudent> AddStudent(SmartStudent student)
 		{
 			var serviceData = new StudentService();
-			await serviceData.AddStudent(student);
+			var studentData = await serviceData.AddStudent(student);
+			return studentData;
 		}
 
 		public async Task<List<SmartStudent>> GetStudents()

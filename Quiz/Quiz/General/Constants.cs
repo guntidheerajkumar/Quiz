@@ -6,6 +6,7 @@
 // Copyright (c) 2017 (c) Dheeraj Kumar Gunti
 //
 using System;
+using System.Collections.Generic;
 using AVFoundation;
 using Foundation;
 using UIKit;
@@ -15,6 +16,10 @@ namespace Quiz
 	public class Constants
 	{
 		public static string AzureUrl = "http://ismartstudent.azurewebsites.net/api/";
+
+		public static List<SmartStudent> StudentsList = new List<SmartStudent>();
+
+		public static int StudentId { get; set; }
 	}
 
 	public static class Extensions

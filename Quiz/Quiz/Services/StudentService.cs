@@ -7,7 +7,7 @@ namespace Quiz.Services
 {
 	public class StudentService
 	{
-		public async Task AddStudent(SmartStudent student)
+		public async Task<SmartStudent> AddStudent(SmartStudent student)
 		{
 			var client = new RestClient(Constants.AzureUrl);
 			var input = new SmartStudentRequest();
@@ -16,7 +16,9 @@ namespace Quiz.Services
 			request.AddHeader("Content-Type", "application/json");
 			request.RequestFormat = DataFormat.Json;
 			request.AddObject(input);
-			await client.ExecuteTaskAsync(request);
+			var response = await client.ExecuteTaskAsync(request);
+			var studentData = JsonConvert.DeserializeObject<SmartStudent>(response.Content);
+			return studentData;
 		}
 
 		public async Task<List<SmartStudent>> GetStudents()
