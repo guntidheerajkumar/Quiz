@@ -93,6 +93,7 @@ namespace Quiz
 				var joinRepository = new StudentRepository();
 				var studentData = await joinRepository.AddStudent(student);
 				if (studentData != null) {
+					Constants.LoggedInStudent = studentData;
 					BTProgressHUD.Dismiss();
 					Constants.StudentId = studentData.StudentId;
 					var studentCollectionViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("StudentCollectionViewController");

@@ -10,18 +10,14 @@ namespace Quiz
 {
 	public partial class QuizIntervalViewController : UIViewController
 	{
-		private List<SmartStudent> students;
 		public QuizIntervalViewController(IntPtr handle) : base(handle)
 		{
 		}
 
-		public async override void ViewDidLoad()
+		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			students = new List<SmartStudent>();
-			var joinRepository = new StudentRepository();
-			students = await joinRepository.GetStudents();
-			QuizParticipantsTableView.Source = new QuizParticipantsTableSource(students);
+			QuizParticipantsTableView.Source = new QuizParticipantsTableSource(Constants.StudentsList);
 			QuizParticipantsTableView.ReloadData();
 
 			QuizParticipantsTableView.TableFooterView = new UIView();

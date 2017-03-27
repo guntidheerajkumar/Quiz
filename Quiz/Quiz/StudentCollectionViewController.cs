@@ -4,6 +4,7 @@ using CoreGraphics;
 using Foundation;
 using Quiz.Repository;
 using UIKit;
+using Newtonsoft.Json;
 using AVFoundation;
 using BigTed;
 
@@ -13,7 +14,6 @@ namespace Quiz
 	{
 		static NSString studentCellId = new NSString("CollectionCell");
 
-		List<SmartStudent> students;
 		private int studentCount { get; set; } = 0;
 
 		public StudentCollectionViewController(IntPtr handle) : base(handle)
@@ -27,25 +27,23 @@ namespace Quiz
 			this.NavigationItem.HidesBackButton = true;
 		}
 
-		public async override void ViewWillAppear(bool animated)
+		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
 			BTProgressHUD.Show(status: "Please wait \n\n Loading Quiz Participants", maskType: ProgressHUD.MaskType.Black);
-			students = new List<SmartStudent>();
 			this.View.BackgroundColor = UIColor.White;
-			var joinRepository = new StudentRepository();
-			students = await joinRepository.GetStudents();
-			CollectionView.ReloadData();
-			BTProgressHUD.Dismiss();
 			CollectionView.Frame = new CGRect(0, 0, this.View.Frame.Width, CollectionView.Frame.Height);
 			CollectionView.RegisterClassForCell(typeof(CollectionCell), studentCellId);
-			Generic.TextToSpeech($"Welcome to Smart Student Quiz, we have {students.Count} boarded right now.");
+			Constants.StudentsList.Add(Constants.LoggedInStudent);
+			CollectionView.ReloadData();
+			Generic.TextToSpeech($"Welcome to Smart Student Quiz, we have {Constants.StudentsList.Count} boarded right now.");
 			AppDelegate.signal.StudentResponseReceived += (sender, e) => {
 				this.InvokeOnMainThread(() => {
+					BTProgressHUD.Dismiss();
 					var response = (SignalrResponse)e;
 					if (e.Command == "BoardingStudents") {
 						this.InvokeOnMainThread(() => {
-							students = (List<SmartStudent>)response.Data;
+							Constants.StudentsList = JsonConvert.DeserializeObject<List<SmartStudent>>(response.Data.ToString());
 							CollectionView.ReloadData();
 							BTProgressHUD.Show(response.TextToSpeech, maskType: ProgressHUD.MaskType.Black);
 							Generic.TextToSpeech(response.TextToSpeech);
@@ -55,7 +53,7 @@ namespace Quiz
 						this.InvokeOnMainThread(() => {
 							this.Title = "Quiz Start";
 							BTProgressHUD.Dismiss();
-							Generic.TextToSpeech($"Quiz is going to start with {students.Count} students");
+							Generic.TextToSpeech($"Quiz is going to start with {Constants.StudentsList.Count} students");
 							Generic.speechSynthesizer.DidFinishSpeechUtterance += (s, ee) => {
 								var quizIntervalViewController = UIStoryboard.FromName("Main", null).InstantiateViewController("QuizIntervalViewController");
 								NavigationController.PushViewController(quizIntervalViewController, true);
@@ -74,13 +72,13 @@ namespace Quiz
 
 		public override nint GetItemsCount(UICollectionView collectionView, nint section)
 		{
-			return students.Count;
+			return Constants.StudentsList.Count;
 		}
 
 		public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
 		{
 			var studentCell = (CollectionCell)collectionView.DequeueReusableCell(studentCellId, indexPath);
-			var student = students[indexPath.Row];
+			var student = Constants.StudentsList[indexPath.Row];
 			studentCell.Image = student.StudentImage.ToImage();
 			studentCell.TitleLabel = student.StudentName;
 			return studentCell;

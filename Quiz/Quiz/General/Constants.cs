@@ -20,6 +20,8 @@ namespace Quiz
 		public static List<SmartStudent> StudentsList = new List<SmartStudent>();
 
 		public static int StudentId { get; set; }
+
+		public static SmartStudent LoggedInStudent { get; set; }
 	}
 
 	public static class Extensions
