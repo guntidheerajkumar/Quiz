@@ -41,6 +41,7 @@ namespace Quiz
 			StudentNameField = new FloatLabeledTextField(new CGRect(0, 40, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
 				Font = UIFont.FromName("HelveticaNeue-Thin", FieldFontSize),
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
+				AutocapitalizationType = UITextAutocapitalizationType.Sentences,
 				BackgroundColor = UIColor.White,
 				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
 				FloatingLabelTextColor = floatingLabelColor,
@@ -50,6 +51,7 @@ namespace Quiz
 			StudentSchoolField = new FloatLabeledTextField(new CGRect(0, 110, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
 				Font = UIFont.FromName("HelveticaNeue-Thin", FieldFontSize),
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
+				AutocapitalizationType = UITextAutocapitalizationType.Sentences,
 				BackgroundColor = UIColor.White,
 				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
 				FloatingLabelTextColor = floatingLabelColor,
@@ -58,6 +60,7 @@ namespace Quiz
 
 			StudentAgeField = new FloatLabeledTextField(new CGRect(0, 180, this.DataPlaceHodler.Frame.Width, FieldHeight)) {
 				Font = UIFont.FromName("HelveticaNeue-Thin", FieldFontSize),
+				AutocapitalizationType = UITextAutocapitalizationType.Sentences,
 				BackgroundColor = UIColor.White,
 				ClearButtonMode = UITextFieldViewMode.WhileEditing,
 				FloatingLabelFont = UIFont.FromName("HelveticaNeue-Medium", FieldFloatingLabelFontSize),
