@@ -212,6 +212,13 @@
     <Compile Include="NavigationController.designer.cs">
       <DependentUpon>NavigationController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuizCommandRequest.cs" />
+    <Compile Include="Models\QuizCommandResponse.cs" />
+    <Compile Include="Models\ValidationResponse.cs" />
+    <Compile Include="Models\EventTable.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\ScoreBoard.cs" />
+    <Compile Include="Models\BuzzerLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
