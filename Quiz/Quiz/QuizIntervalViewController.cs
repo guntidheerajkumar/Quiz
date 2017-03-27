@@ -60,6 +60,11 @@ namespace Quiz
 			listStudents = items;
 		}
 
+		public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+		{
+			return 60;
+		}
+
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
 			return listStudents.Count;
@@ -74,15 +79,15 @@ namespace Quiz
 			cell.TextLabel.Text = item.StudentName;
 			cell.DetailTextLabel.Text = item.SchoolName;
 			cell.ImageView.Image = item.StudentImage.ToImage();
-
+			var frame = cell.ImageView.Frame;
+			frame.Height = 60;
+			frame.Width = 60;
+			cell.ImageView.Frame = frame;
 			cell.BackgroundColor = UIColor.Clear;
 			cell.TextLabel.Font = UIFont.FromName("HelveticaNeue-Thin", 24f);
 			cell.DetailTextLabel.Font = UIFont.FromName("HelveticaNeue-Thin", 16f);
-
 			cell.TextLabel.TextColor = UIColor.FromRGB(245, 127, 90);
 			cell.DetailTextLabel.TextColor = UIColor.FromRGB(64, 163, 166);
-
-
 			return cell;
 		}
 	}

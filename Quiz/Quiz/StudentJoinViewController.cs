@@ -116,11 +116,9 @@ namespace Quiz
 			bool isImage = false;
 			switch (e.Info[UIImagePickerController.MediaType].ToString()) {
 				case "public.image":
-					Console.WriteLine("Image selected");
 					isImage = true;
 					break;
 				case "public.video":
-					Console.WriteLine("Video selected");
 					break;
 			}
 
@@ -135,7 +133,6 @@ namespace Quiz
 				UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
 				if (originalImage != null) {
 					// do something with the image
-					Console.WriteLine("got the original image");
 					StudenImage.Image = originalImage; // display
 				}
 			} else { // if it's a video
