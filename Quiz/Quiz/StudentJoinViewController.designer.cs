@@ -23,6 +23,15 @@ namespace Quiz
 
 		[Outlet]
 		UIKit.UIImageView StudenImage { get; set; }
+
+		[Outlet]
+		UIKit.UITextField StudentAgeField { get; set; }
+
+		[Outlet]
+		UIKit.UITextField StudentNameField { get; set; }
+
+		[Outlet]
+		UIKit.UITextField StudentSchoolField { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -36,14 +45,29 @@ namespace Quiz
 				JoinQuiz = null;
 			}
 
+			if (LblSelectedTopic != null) {
+				LblSelectedTopic.Dispose ();
+				LblSelectedTopic = null;
+			}
+
 			if (StudenImage != null) {
 				StudenImage.Dispose ();
 				StudenImage = null;
 			}
 
-			if (LblSelectedTopic != null) {
-				LblSelectedTopic.Dispose ();
-				LblSelectedTopic = null;
+			if (StudentNameField != null) {
+				StudentNameField.Dispose ();
+				StudentNameField = null;
+			}
+
+			if (StudentSchoolField != null) {
+				StudentSchoolField.Dispose ();
+				StudentSchoolField = null;
+			}
+
+			if (StudentAgeField != null) {
+				StudentAgeField.Dispose ();
+				StudentAgeField = null;
 			}
 		}
 	}

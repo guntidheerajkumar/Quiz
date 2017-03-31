@@ -97,6 +97,9 @@ namespace Quiz
 
 			imageView = new UIImageView();
 			imageView.Frame = new CGRect(0, 0, 200, 200);
+			var backgroundView = new UIImageView();
+			backgroundView.Frame = new CGRect(0, 0, 200, 200);
+			backgroundView.Image = UIImage.FromBundle("RoundedBackground");
 
 			titleLabel = new UILabel();
 			titleLabel.Frame = new CGRect(0, imageView.Frame.Height + 5, 200, 50);
@@ -106,6 +109,7 @@ namespace Quiz
 			titleLabel.TextColor = UIColor.White;
 
 			ContentView.AddSubview(titleLabel);
+			ContentView.AddSubview(backgroundView);
 			ContentView.AddSubview(imageView);
 		}
 

@@ -1,19 +1,15 @@
 ﻿<Properties StartupConfiguration="{F619770E-6008-461C-8984-E40901172745}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz/StudentCollectionViewController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Quiz Status">
     <Files>
-      <File FileName="Quiz/StudentJoinViewController.cs" Line="82" Column="58" />
-      <File FileName="Quiz/StudentCollectionViewController.cs" Line="50" Column="55" />
-      <File FileName="Quiz/IntroQuizViewController.cs" Line="24" Column="68" />
-      <File FileName="Quiz/Main.cs" Line="19" Column="1" />
+      <File FileName="Quiz/StudentJoinViewController.cs" Line="57" Column="4" />
+      <File FileName="Quiz Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Dheeraj/Quiz/Quiz/Quiz/ViewController.cs" relfile="Quiz/ViewController.cs" line="109" column="3" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Quiz PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E7C59482-ECA4-4514-8675-6B514750A5E3" />
+  <MonoDevelop.Ide.ItemProperties.Quiz PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.72A7A333-0BF1-497A-AC17-E7B31E2DA72B" />
   <MultiItemStartupConfigurations />
 </Properties>

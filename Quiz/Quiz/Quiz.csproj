@@ -137,6 +137,9 @@
     <Reference Include="BTProgressHUD">
       <HintPath>..\packages\BTProgressHUD.1.2.0.3\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="AvatarImageView">
+      <HintPath>..\CustomDlls\AvatarImageView.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -227,24 +230,30 @@
     <Compile Include="ParticipantTableViewCell.designer.cs">
       <DependentUpon>ParticipantTableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParticipantsViewController.cs" />
+    <Compile Include="ParticipantsViewController.designer.cs">
+      <DependentUpon>ParticipantsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipantsTableViewCell.cs" />
+    <Compile Include="ParticipantsTableViewCell.designer.cs">
+      <DependentUpon>ParticipantsTableViewCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\placeholder.png" />
     <BundleResource Include="Resources\Background.jpg" />
     <BundleResource Include="Resources\Page_background.jpg" />
     <BundleResource Include="Resources\JoinQuiz.png" />
+    <BundleResource Include="Resources\ControlBackground.png" />
+    <BundleResource Include="Resources\Page_Background.png" />
+    <BundleResource Include="Resources\ButtonBackground.png" />
+    <BundleResource Include="Resources\RoundedBackground.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="signalr">
       <Version>2.1.2.2</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FloatLabeledEntry.iOS\FloatLabeledEntry.iOS.csproj">
-      <Project>{5D6A24DE-BDD5-477F-A203-0F41ABBA26E5}</Project>
-      <Name>FloatLabeledEntry.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
